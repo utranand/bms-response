@@ -1,22 +1,26 @@
 {
-  "name": "node-oracledb",
+  "name": "bms-response",
   "version": "1.0.1",
   "description": "oracledb helper for nodejs.",
   "main": "src/index.js",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git@github.com:utranand/node-oracledb.git"
+    "url": "git@github.com:utranand/bms-response.git"
   },
   "keywords": [
     "npm",
-    "node oracledb"
+    "api response"
   ],
   "author": "utranand",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/utranand/node-oracledb/issuess"
+    "url": "https://github.com/utranand/bms-response/issuess"
   },
-  "homepage": "https://github.com/utranand/node-oracledb/blob/master/README.md",
-  "devDependencies": {}
+  "homepage": "https://github.com/utranand/bms-response/blob/master/README.md",
+  "devDependencies": {},
+  "dependencies": {
+    "lowercase-keys": "^2.0.0",
+    "uuid": "^8.2.0"
+  }
 }
