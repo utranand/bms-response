@@ -1,0 +1,10 @@
+exports._200 = { code: 200, message: 'OK' }
+exports._201 = { code: 201, message: 'Created' }
+exports._204 = { code: 204, message: 'OK' }
+exports._304 = { code: 304, message: 'Not Modified' }
+exports._400 = { code: 400, message: 'Bad Request' }
+exports._401 = { code: 401, message: 'Unauthorized' }
+exports._403 = { code: 403, message: 'Forbidden' }
+exports._404 = { code: 404, message: 'Not Found' }
+exports._409 = { code: 409, message: 'Conflict' }
+exports._500 = { code: 500, message: 'Internal Server Error' }
