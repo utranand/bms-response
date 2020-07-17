@@ -1,7 +1,7 @@
 {
   "name": "bms-response",
   "version": "1.0.1",
-  "description": "oracledb helper for nodejs.",
+  "description": "response object for nodejs api.",
   "main": "src/index.js",
   "scripts": {},
   "repository": {
