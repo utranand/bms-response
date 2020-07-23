@@ -23,6 +23,7 @@ module.exports = function (req, res, next) {
   res.resultObject = _resultObject({ req, res });
   res.resultPaging = _resultPaging({ req, res });
   res.resultSuccess = _resultSuccess({ req, res });
+  res.results = _results({ req, res });
 
   next();
 };
@@ -61,6 +62,32 @@ const _throwError = ({ req, res }) => {
       delete result["error"];
     }
     res.status(result.code).json(result);
+  };
+};
+
+// Any response data for bms website
+const _results = ({ req, res }) => {
+  return (responseData) => {
+    if (responseData === undefined || typeof responseData.data !== "object") {
+      res.throwError({ error: "Bad result" });
+      return;
+    }
+    let data = transformData(responseData.data);
+    let fullUrl = req.protocol + "://" + req.get("host") + req.originalUrl;
+
+    let result = undefined;
+    if (responseData.paging === undefined) {
+      result = resultObject({ rqid: uuid.v4(), url: fullUrl, data });
+    } else {
+      result = resultPaging({
+        rqid: uuid.v4(),
+        url: fullUrl,
+        data,
+        paging: responseData.paging,
+      });
+    }
+
+    res.status(200).json(result);
   };
 };
 
